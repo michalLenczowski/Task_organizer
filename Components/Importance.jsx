@@ -1,4 +1,4 @@
-const Importance=React.createClass({
+const Time=React.createClass({
 	getInitialState:function(){
 		return this.props.store.state;
 
@@ -7,30 +7,26 @@ const Importance=React.createClass({
 	componentDidMount:function(){
 		AppState.addListener((state)=>{
 			this.setState({
-				importance:state.importance	
+				time:state.time	
 			})
 		})
 	
 	},
 
-	setImportance:function(e){
-		let importance=e.target.value;
-		this.props.actions.setImportance(importance)
+	setTime:function(e){
+		let time=e.target.value;
+		this.props.actions.setTime(time)
 	},
 	
 	render:function(){
 		return (
 			<div className="form-group">
 				<div className="col-md-1">
-					<label className="control-label">Importance</label>
+					<label className="control-label">Time</label>
 				</div>
 				
 				<div className="col-md-10">
-					<select className="form-control"  onChange={this.setImportance}>
-						<option value=""></option>
-						{data.wages.map((index,i)=>
-							(<option key={i} value={index}>{index}</option>))}
-					</select>
+					<input type="text"  id="add_hour" className="form-control" onChange={this.setTime} required placeholder="08:00" />
 				</div>
 
 			</div>
