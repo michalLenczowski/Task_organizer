@@ -27,6 +27,17 @@ const Nav=React.createClass({
 	                    </ul>
 	                </div>
 	            </div>
+	            <table >
+                <thead>
+                  <tr>
+                    <th className="col1">#</th>
+                    <th className="col2">Task</th>
+                    <th className="col3">Hour</th>
+                    <th className="col4">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tasklist"></tbody>
+                    </table>
 	        </nav><br/><br/>
 
         		{AppState.state.home? <Home  /> : null}
