@@ -21,7 +21,7 @@
     		</div>
         
       <script type="text/babel" src="Components/AppState.jsx"></script>
-       <script type="text/babel" src="Components/Category.jsx"></script>
+       <script type="text/babel" src="Components/Importance.jsx"></script>
        <script type="text/babel" src="Components/Time.jsx"></script>
 
        <script type="text/babel" src="Components/TaskLists.jsx"></script>
