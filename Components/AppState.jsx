@@ -1,6 +1,5 @@
 var data={
-	categories:['home','work','other'],
-	wages:[1,2,3,4,5,6,7,8,9,10]
+	categories:['home','work','other']	
 };
 
 
@@ -32,7 +31,6 @@ function AppStore(){
 }
 
 const AppState=new AppStore()
-
 AppState.state={
 	data:data,
 	home:true,
@@ -42,8 +40,8 @@ AppState.state={
 	work_list:[],
 	other_list:[],
 	task_number:0,
-	name:null,
-	importance:0
+	name:null,	
+	time:null
 
 }
 
@@ -70,15 +68,29 @@ var actions={
 			this.other=true
 	}),
 	addList:AppState.makeActions(function(){
-		var index=(this.importance-1);
-		if(this.category=='home'){			
-			this.home_list.splice(index,0,this.name);
-		}else if(this.category=='work'){
-			this.work_list.splice(index,0,this.name);
-				}else if(this.category=='other'){
-					this.other_list.splice(index,0,this.name);
-				}			
-		this.task_number++;		
+		//if(this.category!=null && this.time!=null && this.name!=null){
+			var time=parseFloat(this.time);
+			if(this.category=='home'){			
+				this.home_list.push({id:time,date:this.time,name:this.name});
+				this.home_list.sort(function(a,b){
+					return parseFloat(a.id)-parseFloat(b.id);
+				})
+			}else if(this.category=='work'){
+				this.work_list.push({id:time,date:this.time,name:this.name});
+				this.work_list.sort(function(a,b){
+					return parseFloat(a.id)-parseFloat(b.id);
+				})
+			}else if(this.category=='other'){
+				this.other_list.push({id:time,date:this.time,name:this.name});
+				this.other_list.sort(function(a,b){
+					return parseFloat(a.id)-parseFloat(b.id);
+				})
+			}			
+			this.task_number++;
+			//this.name=this.time=this.category=null;
+		/*}else{
+			alert("Nie wypełniłeś wszystkich pól");
+		}*/						
 	}),
 	removeList:AppState.makeActions(function(id){	
 		if(this.home){
@@ -100,7 +112,8 @@ var actions={
 	}),
 	removeListAll:AppState.makeActions(function(){
 		this.home_list=this.work_list=this.other_list=[]
-		this.task_number=0
+		this.task_number=0;
+		this.name=this.time=this.category=null;
 	}),
 	setName:AppState.makeActions(function(name){
 		this.name=name;
@@ -108,14 +121,10 @@ var actions={
 	setCategory:AppState.makeActions(function(category){
 		this.category=category;
 	}),
-	setImportance:AppState.makeActions(function(importance){
+	setTime:AppState.makeActions(function(time){
 	
-		this.importance=importance;
+		this.time=time;
 	}),
-	/*clear:AppState.makeActions(function(){
 
-		this.name=this.importance=this.category=null;
-
-
-	})*/
+	
 }
