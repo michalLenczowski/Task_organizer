@@ -3,7 +3,7 @@
 
    <head>
       <meta charset = "UTF-8">
-      <title>Task Organizer</title>  	
+      <title> Task Organizer </title>  	
 
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/> 
       <link href="main.css" rel="stylesheet">      
