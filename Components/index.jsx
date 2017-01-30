@@ -10,7 +10,7 @@ const Apka=React.createClass({
 				work_list:state.work_list,
 				other_list:state.other_list,
 				name:state.name,
-				importance:state.importance,
+				time:state.time,
 				category:state.category			
 			})
 		})
@@ -28,12 +28,12 @@ const Apka=React.createClass({
 
 					<Textarea  store={AppState} actions={actions}/><br/>
 
+					<Time  store={AppState} data={data} actions={actions}/>
+					<br/><br/>
 					 <Category  store={AppState} data={data} actions={actions}/>
-					<br/><br/>
-
-					<Importance  store={AppState} data={data} actions={actions}/>
-					<br/><br/>
-					<InputGroup actions={actions} />
+					<br/><br/>					
+					
+					<InputGroup actions={actions} store={AppState}/>
 					
 				</div>	
 			</div>
