@@ -22,7 +22,7 @@ const Textarea=React.createClass({
 	render:function(){
 		return (
 			<div>
-				<textarea id="task_place" placeholder="Place your task here" onChange={this.setName} className="form-control"></textarea>
+				<textarea id="task_place" placeholder="Place your task here"  onChange={this.setName} className="form-control"></textarea>
 			</div>
 			)
 	}
