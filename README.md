@@ -1,3 +1,3 @@
 # Task_organizer
 
-Simple web application allows us to manage our daily tasks according to theirs time.
+Simple web application ( write in ReactJS )  allows us to manage our daily tasks according to theirs time.
